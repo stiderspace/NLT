@@ -160,7 +160,7 @@ public class UVMDemo extends UVMRunnable implements AgentWebService,
 			joBot.setFieldLeds(false);
 			joBot.drive(0, 0);
 			break;
-		case STATE_CALIBRATE: // 1
+		case STATE_CALIBRATE: // 1 
 		//		Opdracht 5 - Meten van de sensorwaardes in de simulator
 		//		Opdracht 6 - Meten van de sensorwaardes op het echte veld
 		//		Opdracht 9 - Meten van de batterijspanning
