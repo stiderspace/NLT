@@ -13,7 +13,7 @@ import com.muvium.apt.PeriodicTimer;
  * Opdracht 5E - Doorzoek het moeras
  **/
 
-public class DriveBehavior02 extends Behavior {
+public class DriveBehavior01 extends Behavior {
 	private BaseController joBot;
 	private int state = 0;
 	private int	count = 0;
@@ -34,7 +34,7 @@ public class DriveBehavior02 extends Behavior {
 	}
 
 
-	public DriveBehavior02(BaseController initJoBot, PeriodicTimer initServiceTick,  int servicePeriod) {
+	public DriveBehavior01(BaseController initJoBot, PeriodicTimer initServiceTick,  int servicePeriod) {
 		super(initJoBot, initServiceTick, servicePeriod);
 		joBot = initJoBot;
 	}

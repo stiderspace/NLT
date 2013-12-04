@@ -18,7 +18,7 @@ public class DriveBehavior extends Behavior {
 
 	//private int leftSensor = joBot.getSensorValue(1);
 
-	private void joBotDrive(int curState, int newState, int motorLeft, int motorRight, int time) {
+	/*private void joBotDrive(int curState, int newState, int motorLeft, int motorRight, int time) {
 		if (state == curState) { 
 			joBot.drive(motorLeft, motorRight);
 			if (count++ >= time) {
@@ -27,7 +27,7 @@ public class DriveBehavior extends Behavior {
 				count = 0;
 			}
 		}
-	}
+	}*/
 
 	public DriveBehavior(BaseController initJoBot,
 			PeriodicTimer initServiceTick, int servicePeriod) {
@@ -36,14 +36,15 @@ public class DriveBehavior extends Behavior {
 	}
 
 	public void doBehavior() {
-		while (joBot.getSensorValue(1) >= 250) {
+		if ((joBot.getSensorValue(1) >= 250) || (count++ <= 40)) {
 			joBot.drive(50, 50);
+			
 
 		}
 		
-		if (joBot.getSensorValue(1) <= 250 || joBot.getSensorValue(5) <= 250){
+		if ((joBot.getSensorValue(BaseController.SENSOR_FL)<= 250) || (joBot.getSensorValue(BaseController.SENSOR_FR) <= 250) || (count++ >= 40)){
 			joBot.drive(0, 0);
-			joBot.setStatusLeds(true, false, false); 
+			joBot.setStatusLeds(false, false, true); 
 		}
 	}
 }
